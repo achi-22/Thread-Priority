@@ -1,6 +1,6 @@
 ﻿namespace Thread_Priority
 {
-    partial class Form1
+    partial class frmTrackThread
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,7 @@
             this.btnRun.UseVisualStyleBackColor = false;
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
-            // Form1
+            // frmTrackThread
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -63,7 +63,7 @@
             this.ClientSize = new System.Drawing.Size(365, 268);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.lblStatus);
-            this.Name = "Form1";
+            this.Name = "frmTrackThread";
             this.Text = "frmTrackThread";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

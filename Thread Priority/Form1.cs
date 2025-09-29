@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Thread_Priority
 {
-    public partial class Form1 : Form
+    public partial class frmTrackThread : Form
     {
-        public Form1()
+        public frmTrackThread()
         {
             InitializeComponent();
         }
@@ -25,15 +25,17 @@ namespace Thread_Priority
 
         private void btnRun_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("-Thread Starts-");
+
             Thread threadA = new Thread(new ThreadStart(MyThreadClass.Thread1));
             Thread threadB = new Thread(new ThreadStart(MyThreadClass.Thread1));
             Thread threadC = new Thread(new ThreadStart(MyThreadClass.Thread2));
             Thread threadD = new Thread(new ThreadStart(MyThreadClass.Thread2));
 
-            threadA.Priority = ThreadPriority.Highest;  // Thread A (Highest Priority)
-            threadB.Priority = ThreadPriority.Normal;   // Thread B (Normal Priority)
-            threadC.Priority = ThreadPriority.AboveNormal;  // Thread C (Above Normal Priority)
-            threadD.Priority = ThreadPriority.BelowNormal;  // Thread D (Below Normal Priority)
+            threadA.Priority = ThreadPriority.Highest;  
+            threadB.Priority = ThreadPriority.Normal;   
+            threadC.Priority = ThreadPriority.AboveNormal;  
+            threadD.Priority = ThreadPriority.BelowNormal;  
 
             threadA.Name = "Thread A";
             threadB.Name = "Thread B";
@@ -49,6 +51,8 @@ namespace Thread_Priority
             threadB.Join();
             threadC.Join();
             threadD.Join();
+
+            Console.WriteLine("-End of Thread-");
 
             lblStatus.Text = "-End of Thread-";
         }
